@@ -20,4 +20,17 @@ final class DoMathTest extends PHPUnit_Framework_TestCase {
         $obj = new DoMath();
         $this->assertEquals(1.3, $obj->add(0.5, 0.8));
     }
+
+    /**
+     * @covers DoMath::add
+     */
+    public function testAddHandlesNull() {
+        $obj = new DoMath();
+        // Really Poor assertion
+        $this->assertEquals(false, is_null($obj->add(null, 1)));
+        // Poor assertion
+        $this->assertFalse(is_null($obj->add(null, 1)));
+        // Good assertion
+        $this->assertNotNull($obj->add(null, 1));
+    }
 }
