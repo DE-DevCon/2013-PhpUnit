@@ -33,4 +33,12 @@ final class DoMathTest extends PHPUnit_Framework_TestCase {
         // Good assertion
         $this->assertNotNull($obj->add(null, 1));
     }
+
+    /**
+     * @coversNothing
+     */
+    public function testNoAssertion() {
+        $obj = new DoMath();
+        $obj->add(1, 2);
+    }
 }
