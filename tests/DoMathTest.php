@@ -41,4 +41,21 @@ final class DoMathTest extends PHPUnit_Framework_TestCase {
         $obj = new DoMath();
         $obj->add(1, 2);
     }
+
+    /**
+     * @dataProvider provider
+     * @covers DoMath::add
+     */
+    public function testAddWithDataSet($a, $b, $c) {
+        $obj = new DoMath();
+        $this->assertEquals($c, $obj->add($a, $b));
+    }
+
+    public function provider() {
+        return array(
+            array(2, 3, 5),
+            array(3, -2, 1),
+            array(-2, -3, -5)
+        );
+    }
 }
