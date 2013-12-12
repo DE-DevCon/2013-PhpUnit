@@ -53,9 +53,9 @@ final class DoMathTest extends PHPUnit_Framework_TestCase {
 
     public function provider() {
         return array(
-            array(2, 3, 5),
-            array(3, -2, 1),
-            array(-2, -3, -5)
+            'Positives' => array(2, 3, 5),
+            'Mixed' => array(3, -2, 1),
+            'Negatives' => array(-2, -3, -5)
         );
     }
 }
